@@ -20,6 +20,7 @@
 ## Stretch Goals
 - Extra weave patterns
 - Export image in differnt formats
+- Use do The Metropolitan Museum of Art of New York City API for random examples
 ## Links
 
 
