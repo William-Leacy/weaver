@@ -6,12 +6,12 @@
 - The images can be saved to the user's profile and shared to social meida.
 ## Technology used
 
-CSS: React-Bootstrap
-FrontEnd: React, Canvas, D3.js, p5.js
-Sever API: Django
-Database: PostgreSQL
-VM & Deployment: Docker
-Hosted on: AWS
+- CSS: React-Bootstrap
+- FrontEnd: React, Canvas, D3.js, p5.js
+- Sever API: Django
+- Database: PostgreSQL
+- VM & Deployment: Docker
+- Hosted on: AWS
 
 ## MVP - minimum viable product
 - A git repository (or repositories) hosted on Github, 
