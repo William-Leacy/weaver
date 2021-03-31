@@ -5,7 +5,7 @@
 - Weaving images creates a woven or loom effect on the final merged image.
 - The images can be saved to the user's profile and shared to social meida.
 ## Technology used
-
+- login API: Auth0 React SDK
 - CSS: React-Bootstrap
 - FrontEnd: React, Canvas, D3.js, p5.js
 - Sever API: Django
