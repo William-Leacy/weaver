@@ -1,9 +1,9 @@
 # weaver
 
 ## Description
-- Weaver is a image editor web appilcaiton where users can sign up and weave images together. 
+- Weaver is an image editor web application where users can sign up and weave images together. 
 - Weaving images creates a woven or loom effect on the final merged image.
-- The images can be saved to the user's profile and shared to social meida.
+- The images can be saved to the user's profile and shared on social media.
 ## Technology used
 - login API: Auth0 React SDK
 - CSS: React-Bootstrap
@@ -19,8 +19,8 @@
 
 ## Stretch Goals
 - Extra weave patterns
-- Export image in differnt formats
-- Use do The Metropolitan Museum of Art of New York City API for random examples
+- Export image in different formats
+- Use of The Metropolitan Museum of Art of New York City API for random examples
 ## Links
 
 
@@ -69,14 +69,14 @@ The project trys to follow the coding style guide provied by [AirBnb](https://gi
 
 ### User Stories
 
-- "As a weaver user, I want login to my account and see my past weaved images"
-- "As a weaver user, I want upload my own images for weaving"
-- "As a weaver user, I want weave two images together"
-- "As a weaver user, I would to choose differnt weave styles for my images"
-- "As a weaver user, I want save my created images to my account"
-- "As a weaver user, I want share my images to social media"
-- "As a weaver user, I want download my created images"
-- "As a weaver user, I want too see examples of weaved images for inspiration"
+- "As a weaver user, I want to login to my account and see my past weaved images."
+- "As a weaver user, I want to upload my own images for weaving."
+- "As a weaver user, I want to weave two images together."
+- "As a weaver user, I want to choose different weave styles for my images."
+- "As a weaver user, I want to save my created images to my account."
+- "As a weaver user, I want to share my images to social media."
+- "As a weaver user, I want to download my created images."
+- "As a weaver user, I want to see examples of weaved images for inspiration."
 
 ## Authors
 William Leacy (Current Author).
