@@ -1,8 +1,9 @@
 import React from "react";
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-
+import WeavedImage from "../components/WeavedImage";
 
 const CreateWeavedImage = () => (
+  
   <div className="text-center hero my-5">
     <h1 className="mb-4">Weave images</h1>
     <div>
@@ -32,7 +33,9 @@ const CreateWeavedImage = () => (
         </FormText>
       </FormGroup>
       <Button>Weave Images</Button>
+      <WeavedImage />
     </Form>
+    Canvas
     </div>
   </div>
 );
