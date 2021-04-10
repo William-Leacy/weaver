@@ -71,7 +71,7 @@ const NavBar = () => {
                 <NavItem>
                   <NavLink
                     tag={RouterNavLink}
-                    to="/external-api"
+                    to="/new-image"
                     exact
                     activeClassName="router-link-exact-active"
                   >
