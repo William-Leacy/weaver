@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, FormText, InputGroup, InputGroupAddon } from 'reactstrap';
 import axios from 'axios';
 import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 import { faGlassMartiniAlt } from "@fortawesome/free-solid-svg-icons";
@@ -15,6 +15,9 @@ class CreateWeavedImage extends React.Component {
       choosenWeavePattern: "patternB",
       imageAPreviewSource: "https://via.placeholder.com/200/4287f5/FFFFFF?Text=ImageA",
       imageBPreviewSource: "https://via.placeholder.com/200/4287f5/FFFFFF?Text=ImageB",
+      weavedImageTitle: "Weaved Image Title",
+      authenticatorUserId: "google-oauth2|", // default this would be in the format google-oauth2| numbers
+      authenticatorUserEmail: "william-leacy@outlook.com" // default
     }
   }
 
@@ -36,7 +39,11 @@ class CreateWeavedImage extends React.Component {
       [event.target.id] : ImageBFile,
     })
   }
-
+  updateWeavedImageNameToState = (event) => {
+    this.setState({
+      weavedImageTitle: event.target.value
+    })
+  }
 
   /*
   Author: markE
@@ -158,16 +165,13 @@ class CreateWeavedImage extends React.Component {
     convertCanvasToImageFile();
   }
 
-
-
-
   }
   componentDidMount() {    
 
     axios.post('http://127.0.0.1:8000/weaver-user/', {
 
-      "user_id": "ndfgew",
-      "email": "dfg@gmail.com",
+      "user_id": this.state.authenticatorUserId,
+      "email": this.state.authenticatorUserEmail,
       "weaved_images": []
     },{
       headers: {
@@ -175,13 +179,12 @@ class CreateWeavedImage extends React.Component {
       }})
       .then((response) => {
         console.log(response);
-        this.setState({
-          events: response.data,
-          dataFound: true
-        })
+        console.log("user data added!")
+
       })
       .catch((error) => {
         console.log(error);
+        console.log("user data already exist!")
       });
   }
 
@@ -192,10 +195,12 @@ class CreateWeavedImage extends React.Component {
   }
 
 
+
+
   uploadWeavedImage = () => {
     let formData = new FormData();
     formData.append('image_source', this.state.canvasImage, this.state.canvasImage.name);
-    formData.append('image_name', 'test');
+    formData.append('image_name', this.state.weavedImageTitle);
     formData.append('weaved_user', 1);
 
     axios.post('http://127.0.0.1:8000/gallery/', formData, {
@@ -209,6 +214,7 @@ class CreateWeavedImage extends React.Component {
       }})
       .then((response) => {
         console.log(response);
+        console.log("Weaved image added")
 
       })
       .catch((error) => {
@@ -251,9 +257,18 @@ class CreateWeavedImage extends React.Component {
               patternB
             </Label>
         </FormGroup>
-        <Button onClick={this.weaveImages}>Weave Images</Button>
-        <Button onClick={this.uploadWeavedImage}>Save</Button>
+        <FormGroup>
+      <Button onClick={this.weaveImages}>Weave Images</Button>
+      </FormGroup>
+
       </Form>
+      <InputGroup>
+
+      <Input placeholder="Give your weaved image a name!" onChange={this.updateWeavedImageNameToState} />
+        <InputGroupAddon addonType="append" >
+        <Button onClick={this.uploadWeavedImage}>Save</Button>
+        </InputGroupAddon>
+      </InputGroup>
       <canvas ref="canvas" style={{ width: "100%" }} /> 
       </div>
     </div>
