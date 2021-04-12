@@ -12,7 +12,9 @@ class CreateWeavedImage extends React.Component {
       canvasImage: "",
       imageA: null,
       imageB: null,
-      choosenWeavePattern: "patternB"
+      choosenWeavePattern: "patternB",
+      imageAPreviewSource: "https://via.placeholder.com/200/4287f5/FFFFFF?Text=ImageA",
+      imageBPreviewSource: "https://via.placeholder.com/200/4287f5/FFFFFF?Text=ImageB",
     }
   }
 
@@ -21,6 +23,7 @@ class CreateWeavedImage extends React.Component {
     const ImageAFile = event.target.files[0]
     this.setState({
       imageA: event.target.files[0],
+      imageAPreviewSource: URL.createObjectURL(event.target.files[0]),
       [event.target.id] : ImageAFile,
     })
   }
@@ -29,6 +32,7 @@ class CreateWeavedImage extends React.Component {
     const ImageBFile = event.target.files[0]   
     this.setState({
       imageB: event.target.files[0],
+      imageBPreviewSource: URL.createObjectURL(event.target.files[0]),
       [event.target.id] : ImageBFile,
     })
   }
@@ -144,7 +148,7 @@ class CreateWeavedImage extends React.Component {
       let canvasBase64String = canvas.toDataURL()
       var urlReturnObject = await fetch(canvasBase64String);
       const canvasBlob = await urlReturnObject.blob();
-      var canvasAsFile = new File([canvasBlob], "test.jpeg", {
+      var canvasAsFile = new File([canvasBlob], "weavedImaged.jpeg", {
         type: 'image/jpeg'
       });
       this.setState({
@@ -212,6 +216,7 @@ class CreateWeavedImage extends React.Component {
       });
 
   } 
+  
   render() {
     return(
       <div className="text-center hero my-5">
@@ -220,16 +225,16 @@ class CreateWeavedImage extends React.Component {
       <Form>
       <h1 className="mb-4">Image A</h1>
         <FormGroup>
-          <Input type="file" name="file" id="exampleFile"  onChange={this.loadImageAFileIntoState} 
-          ref={fileInput => this.fileInput = fileInput}/>
+        <img src={this.state.imageAPreviewSource} width="60%"/>
+          <Input type="file" name="file" id="exampleFile"  onChange={this.loadImageAFileIntoState} />
           <FormText color="muted">
           For best weave effect images should be the same size
           </FormText>
         </FormGroup>
         <h1 className="mb-4">Image B</h1>
         <FormGroup>
-          <Input type="file" onChange={this.loadImageBFileIntoState} 
-          ref={fileInput => this.fileInput = fileInput} />
+        <img src={this.state.imageBPreviewSource} width="60%"/>
+          <Input type="file" onChange={this.loadImageBFileIntoState} />
           <FormText color="muted">
           For best weave effect images should be the same size
           </FormText>
