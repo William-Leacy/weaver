@@ -42,3 +42,9 @@
 
   display: flex;
 }
+
+.app-tilte {
+  font-family: 'Shrikhand', curs;
+  font-size: 4.5rem;
+  
+}
