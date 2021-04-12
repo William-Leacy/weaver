@@ -9,7 +9,7 @@ class Content extends Component {
   render() {
     return (
       <div className="next-steps my-5">
-        <h2 className="my-5 text-center">Try it out</h2>
+        <h2 className="my-5 text-center">Upload your images and weave them today!</h2>
         {/* <Row className="d-flex justify-content-between">
           {contentData.map((col, i) => (
             <Col key={i} md={5} className="mb-4">
@@ -23,6 +23,7 @@ class Content extends Component {
             </Col>
           ))}
         </Row> */}
+        <img class="demo-gif"src="/images/chrome-capture.gif"  />
       </div>
     );
   }
