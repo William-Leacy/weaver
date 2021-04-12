@@ -33,3 +33,12 @@
 .result-block-container .result-block {
   opacity: 1;
 }
+
+.demo-gif {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  border: solid 1px;
+
+  display: flex;
+}
