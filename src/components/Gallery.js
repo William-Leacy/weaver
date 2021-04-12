@@ -33,10 +33,9 @@ render() {
         <h1 className="mb-4">My Gallery</h1>
               { 
               this.state.events.map((weavedImage, index) => {
-                console.log(this.state.events[index].image_name)
                 return (
               <Card key={index} >
-                <CardImg top width="100%" src={this.state.events[index].image_source} alt="weaved image" />
+                <CardImg top width="100%" src={this.state.events[index].image_source.split('?')[0]} alt="weaved image" />
                 <CardBody>
                   <CardTitle tag="h5">{this.state.events[index].image_name}</CardTitle>
                   <CardSubtitle tag="h6" className="mb-2 text-muted">{this.state.events[index].image_creation_time}</CardSubtitle>
