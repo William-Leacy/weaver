@@ -168,6 +168,7 @@ class CreateWeavedImage extends React.Component {
   }
   componentDidMount() {    
 
+
     axios.post('http://127.0.0.1:8000/weaver-user/', {
 
       "user_id": this.state.authenticatorUserId,
