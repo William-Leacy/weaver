@@ -36,7 +36,6 @@ const NavBar = () => {
     logout({
       returnTo: window.location.origin,
     });
-
   return (
     <div className="nav-container">
       <Navbar color="light" light expand="md">
