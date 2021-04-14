@@ -1,8 +1,6 @@
 import React from "react";
 import { Button, Form, FormGroup, Label, Input, FormText, InputGroup, InputGroupAddon } from 'reactstrap';
 import axios from 'axios';
-import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
-import { faGlassMartiniAlt } from "@fortawesome/free-solid-svg-icons";
 
 class CreateWeavedImage extends React.Component {
   
@@ -232,7 +230,7 @@ class CreateWeavedImage extends React.Component {
       <Form>
       <h1 className="mb-4">Image A</h1>
         <FormGroup>
-        <img src={this.state.imageAPreviewSource} width="60%"/>
+        <img src={this.state.imageAPreviewSource} alt="" width="60%"/>
           <Input type="file" name="file" id="exampleFile"  onChange={this.loadImageAFileIntoState} />
           <FormText color="muted">
           For best weave effect images should be the same size
@@ -240,7 +238,7 @@ class CreateWeavedImage extends React.Component {
         </FormGroup>
         <h1 className="mb-4">Image B</h1>
         <FormGroup>
-        <img src={this.state.imageBPreviewSource} width="60%"/>
+        <img src={this.state.imageBPreviewSource} alt="" width="60%"/>
           <Input type="file" onChange={this.loadImageBFileIntoState} />
           <FormText color="muted">
           For best weave effect images should be the same size

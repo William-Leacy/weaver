@@ -91,6 +91,17 @@ and sign up for a Free teir access.
 
 ## References
 
+    This is the backend Django API Repo for weaver
+    https://github.com/William-Leacy/weaver-django-rest-api/tree/main/weaver
+
+    Both backend and front end use the boilerplate porjects provided by https://auth0.com/
+
+    AUTH0 boilerplate React
+    https://auth0.com/docs/quickstart/spa/react
+
+    AUTH0 boilerplate Django
+    https://auth0.com/docs/quickstart/backend/django
+    
     Create your first S3 bucket
     https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html
 

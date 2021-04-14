@@ -1,7 +1,5 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import logo from "../assets/logo.svg";
 
 const Hero = () => (
   <div className="text-center hero my-5">
